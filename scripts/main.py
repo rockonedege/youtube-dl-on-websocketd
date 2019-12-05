@@ -94,6 +94,6 @@ def main():
 if __name__ == "__main__":
 
     enable_logging.init()
-    flush_info("using proxy {YDL_PROXY}, download to {DOWNLOAD_TO}.")
+    flush_info(f"using proxy {YDL_PROXY}, download to {DOWNLOAD_TO}.")
        
     main()
