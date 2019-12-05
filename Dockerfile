@@ -1,7 +1,7 @@
 FROM continuumio/miniconda3
 
 LABEL author="Tom Tan <rockonedge@live.com>"
-LABEL version="1.0"
+LABEL version="1.1"
 
 USER root
 
