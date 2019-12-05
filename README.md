@@ -8,7 +8,7 @@ docker run --rm -d --name=getyoutube-websocked-service -it \
   -e TZ=Asia/Shanghai \
   -e YDL_PROXY=192.168.1.8:8080
   -v /download:/download \
-  youtubedlonwebsocketd:latest
+  tomgee/youtube-dl-on-websocketd:latest
   
 ```
 
