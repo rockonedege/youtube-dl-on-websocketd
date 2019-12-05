@@ -15,7 +15,8 @@ from pathlib import Path
 from utils import list_part_files, list_downloaded_files, flush_info, filename_to_url
 
 DOWNLOAD_TO = Path(os.environ.get('DOWNLOAD_TO', (r'/download')))
-YDL_PROXY = Path(os.environ.get('YDL_PROXY'))
+YDL_PROXY = Path(os.environ.get('YDL_PROXY', '.'))
+flush_info("using proxy {YDL_PROXY}, download to {DOWNLOAD_TO}.")
 
 g_cache = Path(__file__).parent.absolute() / 'history.txt'
 g_urls = set()
