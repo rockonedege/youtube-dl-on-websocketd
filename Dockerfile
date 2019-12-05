@@ -25,7 +25,11 @@ RUN apt-get update -q  --fix-missing && apt-get install -qq -y --no-install-reco
     && echo "getting youtube-dl ..." \
     && aria2c https://yt-dl.org/downloads/latest/youtube-dl -d /usr/local/bin -o youtube-dl \
     && chmod a+rx /usr/local/bin/youtube-dl \
-    && youtube-dl --version 
+    && youtube-dl --version \
+    && echo "clone python src code" \
+    && mkdir /scripts && cd /scripts && aria2c https://github.com/rockonedege/async-youtube-dl/archive/master.zip -o async-youtube-dl.zip \
+    && unzip -q async-youtube-dl.zip \
+    && rm async-youtube-dl.zip 
 
 EXPOSE 30000
     
