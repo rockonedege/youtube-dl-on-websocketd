@@ -30,7 +30,7 @@ RUN apt-get update -q  --fix-missing && apt-get install -qq -y --no-install-reco
 EXPOSE 30000
     
 COPY scripts/ /scripts
-CMD [ "sh", "-c", "chmod +x /scripts/init.sh && /scripts/init.sh; bash"]
+CMD [ "bash", "-c", "chmod +x /scripts/init.sh && /scripts/init.sh; bash"]
 
 WORKDIR /scripts
 
