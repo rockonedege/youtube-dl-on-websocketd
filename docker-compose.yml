@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  getyoutube-with-websocketd:
+    container_name: getyoutube-with-websocketd
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    volumes:
+      - /volume2/10t-red/video/youtube:/download
+    environment:
+      - TZ=Asia/Shanghai
+      - DL_PROXY=192.168.1.8:8080
+    restart: always
+
+# equivalent to the following
+# docker pull tomgee/youtube-dl-on-websocketd && docker run --restart=always -d --name=getyoutube-service -p 30000:30000/tcp   -e TZ=Asia/Shanghai   -e YDL_PROXY=192.168.1.8:8080  -v /volume2/10t-red/video/youtube:/download  tomgee/youtube-dl-on-websocketd:latest
